@@ -32,6 +32,15 @@ group :development do
 	gem 'dotenv-rails'
 end
 
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'capybara'
+	gem 'jasmine'
+	gem 'guard-rspec'
+	gem 'shoulda-matchers'
+	gem 'simplecov'
+end
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
