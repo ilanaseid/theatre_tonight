@@ -119,8 +119,16 @@ kinkyboots_perf2 = Performance.create(show_id: kinkyboots.id, start_time: '20:00
 alladin_perf = Performance.create(show_id: alladin.id, start_time: '14:00', date:'09-09-2014')
 alladin_perf2 = Performance.create(show_id: alladin.id, start_time: '20:00', date:'09-09-2014')
 
-# PURCHASES
 
+
+#TICKETS
+# ticket1 = Ticket.create()
+
+
+# PURCHASES
+purchase1 = Purchase.create(order_num: "akfhlskjad", ticket_id: , user_id: 1)
+purchase2 = Purchase.create(order_num: "akfhlskjad", ticket_id: , user_id: 1)
+purchase3 = Purchase.create(order_num: "akfhlskjad", ticket_id: , user_id: 1)
 
 
 #TAGS
