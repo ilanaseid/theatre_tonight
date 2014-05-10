@@ -11,10 +11,85 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509210732) do
+ActiveRecord::Schema.define(version: 20140510162118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "performances", force: true do |t|
+    t.time     "start_time"
+    t.date     "date"
+    t.integer  "show_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "performances", ["show_id"], name: "index_performances_on_show_id", using: :btree
+
+  create_table "purchases", force: true do |t|
+    t.string   "order_num"
+    t.string   "ticket_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
+
+  create_table "shows", force: true do |t|
+    t.string   "name"
+    t.string   "genre"
+    t.string   "img1_url"
+    t.string   "img2_url"
+    t.string   "img3_url"
+    t.string   "video_url"
+    t.string   "description"
+    t.integer  "min_run_time"
+    t.integer  "theatre_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shows", ["theatre_id"], name: "index_shows_on_theatre_id", using: :btree
+
+  create_table "shows_tags", id: false, force: true do |t|
+    t.integer "tag_id",  null: false
+    t.integer "show_id", null: false
+  end
+
+  add_index "shows_tags", ["show_id"], name: "index_shows_tags_on_show_id", using: :btree
+  add_index "shows_tags", ["tag_id"], name: "index_shows_tags_on_tag_id", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "theatres", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "address_2"
+    t.integer  "phone_num"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tickets", force: true do |t|
+    t.string   "seat_type"
+    t.string   "seat_num"
+    t.string   "seat_row"
+    t.integer  "price"
+    t.integer  "original_price"
+    t.integer  "performance_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tickets", ["performance_id"], name: "index_tickets_on_performance_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
