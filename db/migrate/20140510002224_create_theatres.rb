@@ -4,7 +4,7 @@ class CreateTheatres < ActiveRecord::Migration
       t.string :name
       t.string :address
       t.string :address_2
-      t.integer :phone_num
+      t.string :phone_num
       t.string :city
       t.string :state
       t.integer :zip

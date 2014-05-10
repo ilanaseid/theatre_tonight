@@ -12,8 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
+//= require underscore
+//= require backbone
+//= require backbone_associations
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require router
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

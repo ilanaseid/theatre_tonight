@@ -59,7 +59,7 @@ alladin = Show.create(name: "Alladin",
 					video_url: 'www.youtube.com/embed/uGvLP7WyQ3c',
 					description: 'description of alladin would be here', 
 					min_run_time: '200', 
-					theatre: new_amsterdam)
+					theatre_id: new_amsterdam.id)
 
 wicked = Show.create(name: "Wicked",  
 					genre: "musical",
@@ -70,7 +70,7 @@ wicked = Show.create(name: "Wicked",
 					video_url: 'www.youtube.com/embed/uGvLP7WyQ3c',
 					description: "Winner of over 50 major awards including the Grammy Award and three Tony Awards, WICKED is the untold story of the witches of Oz. Long before Dorothy drops in, two other girls meet in the land of Oz. One, born with emerald-green skin, is smart, fiery and misunderstood. The other is beautiful, ambitious and very popular. WICKED tells the story of their remarkable odyssey, how these two unlikely friends grow to become the Wicked Witch of the West and Glinda the Good.", 
 					min_run_time:'200', 
-					theatre: al_hirschfeld)
+					theatre_id: al_hirschfeld.id)
 
 bookofmormon = Show.create(name: "Book of Mormon", 
 						genre: "musical",
@@ -81,7 +81,7 @@ bookofmormon = Show.create(name: "Book of Mormon",
 						video_url: 'www.youtube.com/embed/uGvLP7WyQ3c',
 						description: "Description of BOM would be here", 
 						min_run_time:'200', 
-						theatre: eugene_oneill)
+						theatre_id: eugene_oneill.id)
 
 avenueq = Show.create(name: "Avenue Q",
 					poster_url: 'http://tt-prod-images.s3.amazonaws.com/prod/1378929509476_Avenue-Q.jpg',
@@ -92,7 +92,7 @@ avenueq = Show.create(name: "Avenue Q",
 					video_url: 'www.youtube.com/embed/uGvLP7WyQ3c',
 					description: "Description of Avenue Q would be here",
 					min_run_time:'150',
-					theatre: geffen)
+					theatre_id: geffen.id)
 
 kinkyboots = Show.create(name: "Kinky Boots", 
 						poster_url: 'http://tt-prod-images.s3.amazonaws.com/prod/1366920061424_show-kinkyboots-hero.jpg', 
@@ -103,21 +103,21 @@ kinkyboots = Show.create(name: "Kinky Boots",
 						genre: "musical", 
 						description: "From Grammy Award-winning pop icon Cyndi Lauper and four-time Tony Award winner Harvey Fierstein comes the exhilarating new musical KINKY BOOTS, directed and choreographed by Tony Award winner Jerry Mitchell. Charlie Price (Tony nominee Stark Sands) has suddenly inherited his father’s shoe factory, which is on the verge of bankruptcy. Trying to live up to his father’s legacy and save his family business, Charlie finds inspiration in the form of Lola (Billy Porter). A fabulous entertainer in need of some sturdy stilettos, Lola turns out to be the one person who can help Charlie become the man he’s meant to be. As they work to turn the factory around, this unlikely pair finds that they have more in common than they ever dreamed possible… and discovers that when you change your mind about someone, you can change your whole world. Featuring a sensational new score, knockout dancing and a spectacularly uplifting story, KINKY BOOTS is the must-see new musical that proves that sometimes, the best way to fit in is to stand out!", 
 						min_run_time:'140', 
-						theatre: young_vic)
+						theatre_id: young_vic.id)
 
     
 # PERFORMANCES
 
-wicked_perf = Performance.create(show: wicked, start_time: '14:00', date:'09-09-2014')
-wicked_perf2 = Performance.create(show: wicked, start_time: '20:00', date:'09-09-2014')
-bookofmormon_perf = Performance.create(show: bookofmormon, start_time: '14:00', date:'09-09-2014')
-bookofmormon_perf2 = Performance.create(show: bookofmormon, start_time: '20:00', date:'09-09-2014')
-avenueq_perf = Performance.create(show: avenueq, start_time: '14:00', date:'09-09-2014')
-avenueq_perf2 = Performance.create(show: avenueq, start_time: '20:00', date:'09-09-2014')
-kinkyboots_perf = Performance.create(show: kinkyboots, start_time: '14:00', date:'09-09-2014')
-kinkyboots_perf2 = Performance.create(show: kinkyboots, start_time: '20:00', date:'09-09-2014')
-alladin_perf = Performance.create(show:alladin, start_time: '14:00', date:'09-09-2014')
-alladin_perf2 = Performance.create(show: alladin, start_time: '20:00', date:'09-09-2014')
+wicked_perf = Performance.create(show_id: wicked.id, start_time: '14:00', date:'09-09-2014')
+wicked_perf2 = Performance.create(show_id: wicked.id, start_time: '20:00', date:'09-09-2014')
+bookofmormon_perf = Performance.create(show_id: bookofmormon.id, start_time: '14:00', date:'09-09-2014')
+bookofmormon_perf2 = Performance.create(show_id: bookofmormon.id, start_time: '20:00', date:'09-09-2014')
+avenueq_perf = Performance.create(show_id: avenueq.id, start_time: '14:00', date:'09-09-2014')
+avenueq_perf2 = Performance.create(show_id: avenueq.id, start_time: '20:00', date:'09-09-2014')
+kinkyboots_perf = Performance.create(show_id: kinkyboots.id, start_time: '14:00', date:'09-09-2014')
+kinkyboots_perf2 = Performance.create(show_id: kinkyboots.id, start_time: '20:00', date:'09-09-2014')
+alladin_perf = Performance.create(show_id: alladin.id, start_time: '14:00', date:'09-09-2014')
+alladin_perf2 = Performance.create(show_id: alladin.id, start_time: '20:00', date:'09-09-2014')
 
 # PURCHASES
 
