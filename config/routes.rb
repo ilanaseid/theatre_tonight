@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :performances
   resources :tickets
 
-  root 'shows#index'
+  root 'storefront#index'
 
 end

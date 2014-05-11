@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require foundation
 //= require underscore
 //= require backbone
 //= require_tree ./models
@@ -21,4 +22,11 @@
 //= require router
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(document).ready(function() {
+	theatreApp = new AppRouter();
+	theatreApp.start();
+});
+
+$(function(){
+	$(document).foundation();
+});

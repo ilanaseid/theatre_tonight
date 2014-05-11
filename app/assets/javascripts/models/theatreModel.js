@@ -1,8 +1,8 @@
-var TheatreModel = Backbone.RelationalModel.extend({
+var TheatreModel = Backbone.Model.extend({
 
-	urlRoot: '/theatres',
-	initialize: function() {
-		this.shows = new ShowCollection([], {theatre: this});
-	}
+	urlRoot: '/theatres'
+	// initialize: function() {
+	// 	this.shows = new ShowCollection([], {theatre: this});
+	// }
 
 });
