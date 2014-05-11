@@ -2,6 +2,7 @@ class ShowsController < ApplicationController
   def index
     shows = Show.all
     respond_to do |format|
+      format.html
       format.json { render json: shows.to_json }
     end
   end

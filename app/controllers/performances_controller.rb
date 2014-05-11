@@ -1,5 +1,10 @@
 class PerformancesController < ApplicationController
   def index
+    performances = Performance.all
+    respond_to do |format|
+      format.html
+      format.json { render json: performances.to_json }
+    end
   end
 
   def new
