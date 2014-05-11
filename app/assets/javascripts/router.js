@@ -5,7 +5,7 @@ var AppRouter = Backbone.Router.extend({
 	},
 
 	initialize: function() {
-
+		
 	},
 
 	start: function() {
