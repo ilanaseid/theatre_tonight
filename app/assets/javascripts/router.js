@@ -7,6 +7,7 @@ var AppRouter = Backbone.Router.extend({
 	initialize: function() {
 		this.theatreCollection = new TheatreCollection();
 		this.showCollection = new ShowCollection();
+		this.showCollectionView = new ShowCollectionView({collection: this.showCollection});
 	},
 
 	start: function() {
@@ -21,6 +22,7 @@ var AppRouter = Backbone.Router.extend({
 				$.each(this.showCollection.models, function(index, value) {
 					value.theatre = theatresReference.findWhere({id: value.attributes.theatre_id});
 				});
+				$('#shows').html(this.showCollectionView.el);
 			}.bind(this)
 		});
 	}
