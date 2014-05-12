@@ -3,6 +3,11 @@
 	src: url('<%= asset_path('idealist_light.otf') %>');
 }
 
+@font-face {
+	font-family: osmedium;
+	src: url('<%= asset_path('os_medium.otf') %>');
+}
+
 h3 { margin: 0; padding: 0; }
 
 .logo {
@@ -17,17 +22,13 @@ h3 { margin: 0; padding: 0; }
 	div {
 		cursor: pointer;
 		height: 200px;
-		img {
-			height: 100px;
-		}
+		img { height: 100px; }
 		h3 {
-			font-size: 20px;
+			font-size: 28px;
 			line-height: 20px;
 			margin: 10px 0 3px 0;
-			font-family: 'idealist';
+			font-family: 'osmedium';
 		}
-		p {
-			margin: 0;
-		}
+		p { margin: 0; }
 	}
 }
