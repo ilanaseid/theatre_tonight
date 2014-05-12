@@ -11,7 +11,7 @@
 h3 { margin: 0; padding: 0; }
 
 .logo {
-	height: 35px;
+	height: 60px;
 }
 
 .top-padding {
@@ -19,16 +19,27 @@ h3 { margin: 0; padding: 0; }
 }
 
 .show-item {
-	div {
+	.show-box {
 		cursor: pointer;
 		height: 200px;
-		img { height: 100px; }
-		h3 {
-			font-size: 28px;
-			line-height: 20px;
-			margin: 10px 0 3px 0;
-			font-family: 'osmedium';
+		overflow: hidden;
+		.content {
+			float: right;
+			margin: 5px;
+			height: 190px;
+			width: 180px;
+			padding: 5px 10px 5px 10px;
+			background-color: rgba(255, 255, 255, 0.8);
+			img { height: 100px; }
+			h3 {
+				font-size: 16px;
+				line-height: 30px;
+				margin: 3px 0 0 0;
+				font-family: 'idealist';
+				border-bottom: solid 1px gray;
+				margin-bottom: 10px;
+			}
+			p { margin: 0; font-size: 14px; line-height: 16px; }
 		}
-		p { margin: 0; }
 	}
 }
