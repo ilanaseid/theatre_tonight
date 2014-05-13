@@ -1,7 +1,7 @@
 var ShowCollectionView = Backbone.View.extend({
 
 	tagName: 'ul',
-	className: 'shows-wrapper small-block-grid-2',
+	className: 'shows-wrapper small-block-grid-1 medium-block-grid-2',
 	initialize: function() {
 		// this.listenTo(this.collection, 'add', this.addOne);
 	},
