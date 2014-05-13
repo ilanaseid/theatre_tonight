@@ -26,6 +26,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'foundation-rails'
 gem 'stripe'
+gem 'acts_as_shopping_cart', '~> 0.2.1'
 
 group :development do
 	gem 'pry'

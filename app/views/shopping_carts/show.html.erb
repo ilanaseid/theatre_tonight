@@ -1,0 +1,27 @@
+<div class="row top-padding">
+	<div class="small-12 columns" id="cart"></div>
+
+<h1>Shopping Cart</h1>
+
+<%= form_tag charges_path do %>
+<article>
+	<label class="amount">
+		<div>
+			<div><b>SubTotal:</b><%= number_to_currency @shopping_cart.subtotal %></div>
+			<div><b>Taxes:</b><%= number_to_currency @shopping_cart.taxes %></div>
+			<div><b>Total:</b><%= number_to_currency @shopping_cart.total %></div>
+		</div>
+	</label>
+</article>
+
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+	data-email="<%= current_user.email %>"	  
+	data-description="Cart"
+	data-amount="<%= @shopping_cart.total %>">
+</script>
+<% end %>
+
+<%= render :partial => 'shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
+
+</div>

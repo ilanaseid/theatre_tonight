@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :performances
   resources :tickets
   resources :charges
+  resources :shopping_cart
 end
