@@ -27,6 +27,4 @@ $(document).ready(function() {
 	theatreApp.start();
 });
 
-$(function(){
-	$(document).foundation();
-});
+$(document).foundation();

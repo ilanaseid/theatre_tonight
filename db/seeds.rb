@@ -1122,6 +1122,7 @@ purchase1 = Purchase.create(order_num: "akfhlskjad", ticket_id: 1, user_id: 1)
 purchase2 = Purchase.create(order_num: "akfhlskjad", ticket_id: 2, user_id: 1)
 purchase3 = Purchase.create(order_num: "akfhlskjad", ticket_id: 3, user_id: 1)
 
+
 #TAGS
 family = Tag.create(name: "Family")
 tony_winner = Tag.create(name: 'Tony winner')

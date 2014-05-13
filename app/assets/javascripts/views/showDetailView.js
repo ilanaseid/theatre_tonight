@@ -5,9 +5,8 @@ var ShowDetailView = Backbone.View.extend({
 		this.render();
 	},
 	render: function() {
-		var modalView = this.template(this.model.toJSON());
-		console.log(this.model);
-
+		// console.log(this.model);
+		var modalView = this.template(this.model);
 		$('#modal').empty().append(modalView);
 	}
 

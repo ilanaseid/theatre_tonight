@@ -1,6 +1,6 @@
 class ShowsController < ApplicationController
   def index
-    shows = Show.all
+    shows = Show.get_shows_for_modal
     respond_to do |format|
       format.html
       format.json { render json: shows.to_json }

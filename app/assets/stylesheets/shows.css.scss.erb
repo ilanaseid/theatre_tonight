@@ -8,17 +8,22 @@
 	src: url('<%= asset_path('os_medium.otf') %>');
 }
 
+@font-face {
+	font-family: norwester;
+	src: url('<%= asset_path('norwester.otf') %>');
+}
+
 h3 { margin: 0; padding: 0; }
 
 .logo {
-	height: 60px;
+	height: 50px;
 }
 
 .top-padding {
-	padding-top: 60px;
+	padding-top: 30px;
 }
 
-.show-item {
+.storefront-item {
 	.show-box {
 		cursor: pointer;
 		height: 200px;
@@ -32,10 +37,11 @@ h3 { margin: 0; padding: 0; }
 			background-color: rgba(255, 255, 255, 0.8);
 			img { height: 100px; }
 			h3 {
-				font-size: 16px;
+				font-size: 20px;
 				line-height: 30px;
 				margin: 3px 0 0 0;
-				font-family: 'idealist';
+				font-family: 'norwester';
+				text-transform: uppercase;
 				border-bottom: solid 1px gray;
 				margin-bottom: 10px;
 			}

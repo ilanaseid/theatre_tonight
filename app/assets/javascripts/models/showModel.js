@@ -1,6 +1,6 @@
 var ShowModel = Backbone.Model.extend({
 
-	urlRoot: '/shows'
+	urlRoot: '/shows' 
 	// initialize: function() {
 	// 	this.performances = new PerformanceCollection([], {show: this});
 	// }
