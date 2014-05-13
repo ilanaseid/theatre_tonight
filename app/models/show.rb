@@ -27,7 +27,7 @@ class Show < ActiveRecord::Base
       description: show.description,
       poster_url: show.poster_url,
       theatre: show.theatre.name,
-      performances: show.performances.inject(Array.new) { |arr, performance| arr << {date: performance.date, start_time: performance.start_time, tickets: performance.tickets} }
+      performances: show.performances.inject(Array.new) { |arr, performance| arr << {date: performance.date, start_time: performance.start_time.to_s(:long), tickets: performance.tickets} }
     }
   end
   

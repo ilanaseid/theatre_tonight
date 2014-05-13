@@ -13,14 +13,19 @@ var StorefrontItemView = Backbone.View.extend({
 		var createdView = this.template(this.model.toJSON());
 		this.$el.html(createdView);
 	},
-	showModal: function() {
-		var modalModel = new ModalModel({id: this.model.id}).fetch({
-			
+	populateModal: function(id) {
+		var modalModel = new ModalModel({id: id}).fetch({
 			success: function() {
 				var showDetailView = new ShowDetailView({model: modalModel.responseJSON});
-				$('#modal').foundation('reveal', 'open');
-			}
+			}.bind(this)
 		});
+	},
+	showModal: function() {
+		this.populateModal(this.model.id);
+		$('#modal').foundation('reveal', 'open');
+		setModal = setInterval(function() {
+			this.populateModal(this.model.id);
+		}.bind(this), 2000);
 	}
 
 });

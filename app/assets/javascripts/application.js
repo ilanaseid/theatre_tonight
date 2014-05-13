@@ -25,5 +25,6 @@
 $(document).ready(function() {
 	theatreApp = new AppRouter();
 	theatreApp.start();
-	$(document).foundation();
 });
+
+$(document).foundation();

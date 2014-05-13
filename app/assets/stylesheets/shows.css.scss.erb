@@ -4,16 +4,17 @@
 }
 
 @font-face {
-	font-family: osmedium;
-	src: url('<%= asset_path('os_medium.otf') %>');
+	font-family: gafata;
+	src: url('<%= asset_path('gafata.otf') %>');
 }
 
 @font-face {
-	font-family: norwester;
-	src: url('<%= asset_path('norwester.otf') %>');
+	font-family: bebasneue;
+	src: url('<%= asset_path('bebasneue.otf') %>');
 }
 
-h3 { margin: 0; padding: 0; }
+i { margin-right: 5px; }
+h3 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 
 .logo {
 	height: 50px;
@@ -39,10 +40,9 @@ h3 { margin: 0; padding: 0; }
 			background-color: rgba(255, 255, 255, 0.9);
 			img { height: 100px; }
 			h3 {
-				font-size: 18px;
+				font-size: 20px;
 				line-height: 20px;
 				margin: 3px 0 0 0;
-				font-family: 'norwester';
 				text-transform: uppercase;
 				border-bottom: solid 1px gray;
 				margin-bottom: 10px;
@@ -52,3 +52,23 @@ h3 { margin: 0; padding: 0; }
 	}
 }
 
+.ticket-table {
+	width: 100%;
+	border: none;
+	.orig-price {
+		text-align: right;
+		text-decoration: line-through;
+		font-family: 'bebasneue';
+	}
+	.sale-price {
+		text-align: right;
+		color: red;
+		font-family: 'bebasneue';
+		font-size: 20px;
+	}
+	.add-to-cart {
+		text-align: center;
+		color: red;
+		cursor: pointer;
+	}
+}
