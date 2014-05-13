@@ -14,8 +14,13 @@ var StorefrontItemView = Backbone.View.extend({
 		this.$el.html(createdView);
 	},
 	showModal: function() {
-		var showDetailView = new ShowDetailView({model: this.model});
-		$('#modal').foundation('reveal', 'open');
+		var modalModel = new ModalModel({id: this.model.id}).fetch({
+			
+			success: function() {
+				var showDetailView = new ShowDetailView({model: modalModel.responseJSON});
+				$('#modal').foundation('reveal', 'open');
+			}
+		});
 	}
 
 });

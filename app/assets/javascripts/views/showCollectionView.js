@@ -10,7 +10,6 @@ var ShowCollectionView = Backbone.View.extend({
 		this.collection.each(this.addOne, this);
 	},
 	addOne: function(showModel) {
-		console.log(showModel);
 		var showItemView = new ShowItemView({model: showModel});
 		showItemView.$el.appendTo(this.$el);
 	}

@@ -19,16 +19,12 @@ var AppRouter = Backbone.Router.extend({
 	},
 
 	index: function() {
-
-
 		this.storefrontCollection.fetch({
 			success: function() {
 				this.storefrontCollectionView.addAll();
 				$('#shows').html(this.storefrontCollectionView.el);
 			}.bind(this)
 		});
-
-
 
 		// var theatresReference = this.theatreCollection;
 		// var performanceReference = this.performanceCollection;
