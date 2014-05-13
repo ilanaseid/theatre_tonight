@@ -5,7 +5,7 @@ end
 
 def create
   # Amount in cents
-  @amount = 1000
+  @amount = params[:amount]
 
   customer = Stripe::Customer.create(
 
