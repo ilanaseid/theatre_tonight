@@ -15,7 +15,8 @@ var ShowItemView = Backbone.View.extend({
 	},
 	showModal: function() {
 		var showDetailView = new ShowDetailView({model: this.model});
-		$('#modal').foundation('reveal', 'open');
+		$('#modal').foundation('reveal', 'open').trigger('resize');
+
 	}
 
 });
