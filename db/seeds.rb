@@ -404,7 +404,7 @@ lion_king_perf = Performance.create(show_id: lion_king.id, start_time: '14:00', 
 lion_king_perf2 = Performance.create(show_id: lion_king.id, start_time: '20:00', date:'09-09-2014')
 chicago_perf = Performance.create(show_id: chicago.id, start_time: '14:00', date:'09-09-2014')
 chicago_perf2 = Performance.create(show_id: chicago.id, start_time: '20:00', date:'09-09-2014')
-cinderella_perf = Performance.create(show_id: cinderellaid, start_time: '14:00', date:'09-09-2014')
+cinderella_perf = Performance.create(show_id: cinderella.id, start_time: '14:00', date:'09-09-2014')
 cinderella_perf2 = Performance.create(show_id: cinderella.id, start_time: '20:00', date:'09-09-2014')
 jersey_boys_perf = Performance.create(show_id: jersey_boys.id, start_time: '14:00', date:'09-09-2014')
 jersey_boys_perf2 = Performance.create(show_id: jersey_boys.id, start_time: '20:00', date:'09-09-2014')
@@ -1118,9 +1118,9 @@ gentleman_tix_24 = Ticket.create(seat_type: "Orchestra", seat_num:"24", seat_row
 gentleman_tix_25 = Ticket.create(seat_type: "Orchestra", seat_num:"25", seat_row:"F", price: 1000, original_price: 25000, performance_id: gentleman_perf2.id)
 
 # PURCHASES
-purchase1 = Purchase.create(order_num: "akfhlskjad", ticket_id: , user_id: 1)
-purchase2 = Purchase.create(order_num: "akfhlskjad", ticket_id: , user_id: 1)
-purchase3 = Purchase.create(order_num: "akfhlskjad", ticket_id: , user_id: 1)
+purchase1 = Purchase.create(order_num: "akfhlskjad", ticket_id: 1, user_id: 1)
+purchase2 = Purchase.create(order_num: "akfhlskjad", ticket_id: 2, user_id: 1)
+purchase3 = Purchase.create(order_num: "akfhlskjad", ticket_id: 3, user_id: 1)
 
 #TAGS
 family = Tag.create(name: "Family")

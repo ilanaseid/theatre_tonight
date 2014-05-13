@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-	root 'storefront#index'
+  root 'storefront#index'
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :users
@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :shows
   resources :performances
   resources :tickets
-
+  resources :charges
 end
