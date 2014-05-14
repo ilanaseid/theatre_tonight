@@ -23,12 +23,12 @@ var ShowDetailView = Backbone.View.extend({
 
 	addToCart: function(e) {
 		$.ajax({
-			url: '/shopping_cart',
+			url: '/shopping_carts',
 			method: 'post',
 			dataType: 'json',
 			data: {ticket_id: e.currentTarget.id}
 		}).done(function(data) {
-
+			
 		});
 	},
 	clearTheInterval: function() {

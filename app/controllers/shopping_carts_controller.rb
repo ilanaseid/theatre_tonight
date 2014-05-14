@@ -2,11 +2,15 @@ class ShoppingCartsController < ApplicationController
   before_filter :extract_shopping_cart
 
   def create
-    @ticket = Ticket.find(params[:ticket_id])
+    @ticket = Ticket.find(params[:ticket_id].to_i)
+    data = {ticket: @ticket, performance: @ticket.performance, show: @ticket.performance.show}
     @shopping_cart.add(@ticket, @ticket.price)
     @ticket.update(availability: "Pending")
-    redirect_to shopping_cart_path #need to change this so it stays on the modal window?
-  end
+      respond_to do |format|
+        format.html { redirect_to shopping_cart_path }
+        format.json { render json: @shopping_cart.to_json }
+      end
+    end
 
   def show
 

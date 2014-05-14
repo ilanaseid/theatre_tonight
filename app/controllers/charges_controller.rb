@@ -5,17 +5,18 @@ end
 
 def create
   # Amount in cents
-  @amount = params[:amount]
+  shopping_cart_id = session[:shopping_cart_id]
+  @shopping_cart = ShoppingCart.find(shopping_cart_id)
+  @amount = @shopping_cart.total
 
   customer = Stripe::Customer.create(
-
     :email => current_user.email,
     :card  => params[:stripeToken]
   )
 
   charge = Stripe::Charge.create(
     :customer    => customer.id,
-    :amount      => @amount,
+    :amount      => @amount.round,
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
   )

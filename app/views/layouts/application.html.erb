@@ -14,8 +14,11 @@
 </head>
 
 <body>
-
+<% if current_user %>
+<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<% end %>
 	<div class="fixed">
+	
 	<nav class="top-bar" data-topbar>
 		<ul class="title-area">
 			<li class="name">

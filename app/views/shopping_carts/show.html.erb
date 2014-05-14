@@ -7,9 +7,9 @@
 <article>
 	<label class="amount">
 		<div>
-			<div><b>SubTotal:</b><%= number_to_currency @shopping_cart.subtotal %></div>
-			<div><b>Taxes:</b><%= number_to_currency @shopping_cart.taxes %></div>
-			<div><b>Total:</b><%= number_to_currency @shopping_cart.total %></div>
+			<div><b>SubTotal:</b><%= number_to_currency @shopping_cart.subtotal / 100%></div>
+			<div><b>Taxes:</b><%= number_to_currency @shopping_cart.taxes / 100 %></div>
+			<div><b>Total:</b><%= number_to_currency @shopping_cart.total / 100 %></div>
 		</div>
 	</label>
 </article>
@@ -20,6 +20,7 @@
 	data-description="Cart"
 	data-amount="<%= @shopping_cart.total %>">
 </script>
+
 <% end %>
 
 <%= render :partial => 'shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
