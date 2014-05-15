@@ -1,0 +1,21 @@
+<div class="row top-padding">
+	<div class="small-6 small-centered columns">
+		<div class="devise-wrap shadow">
+
+			<h3>Sign up</h3>
+			<hr>
+			<%= form_for @commercial_user do |f| %>
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+			<%= f.label :phone_num %>
+			<%= f.text_field :phone_num %>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+			<%= f.label :password_confirmation %>
+			<%= f.password_field :password_confirmation %>
+			<%= f.submit "Sign up", :class => 'button small expand' %>
+			<% end %>
+
+		</div>
+	</div>
+</div>

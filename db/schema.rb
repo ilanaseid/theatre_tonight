@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513185851) do
+ActiveRecord::Schema.define(version: 20140514203610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "commercial_users", force: true do |t|
+    t.string   "email"
+    t.string   "phone_num"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "performances", force: true do |t|
     t.time     "start_time"
@@ -65,8 +73,10 @@ ActiveRecord::Schema.define(version: 20140513185851) do
     t.integer  "theatre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "commercial_user_id"
   end
 
+  add_index "shows", ["commercial_user_id"], name: "index_shows_on_commercial_user_id", using: :btree
   add_index "shows", ["theatre_id"], name: "index_shows_on_theatre_id", using: :btree
 
   create_table "shows_tags", id: false, force: true do |t|

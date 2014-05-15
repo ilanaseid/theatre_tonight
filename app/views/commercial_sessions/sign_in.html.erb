@@ -1,0 +1,18 @@
+<div class="row top-padding">
+	<div class="small-6 small-centered columns">
+		<div class="devise-wrap shadow">
+
+			<h3>Sign In</h3>
+			<hr>
+			<%= form_tag "/commercial_sign_in", :method => 'post' do %>
+			<label for="email">Email</label>
+			<%= text_field_tag :email %>
+			<label for="password">Password</label>
+			<%= password_field_tag :password %>
+			<%= submit_tag "Sign In", :class => 'button small expand' %>
+			<% end %>
+			
+			<p>Are you new? <%= link_to "Sign up here!", '/commercial_users/new' %></p>
+		</div>
+	</div>
+</div>

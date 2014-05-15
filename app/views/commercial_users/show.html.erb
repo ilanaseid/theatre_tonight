@@ -1,0 +1,14 @@
+<div class="row top-padding">
+	<div class="small-12 small-centered columns">
+		<%= image_tag(@show.poster_url) %>
+		<h3>Add Tickets for <%= @show.name %></h3>
+		<hr>
+<%= form_for :ticket do |f| %>
+  Performance : <%= f.collection_select :performance_id, @show.performances.order(:date),:date,:start_time, "Select Performance", include_blank: true %> </br>
+  Seat Type : <%= f.select :seat_type, [['Mezzanine', 1], ['Orchestra', 2]] %><br />
+  Seat Number : <%= f.text_area :seat_num %><br />
+  Seat Row : <%= f.text_area :seat_row %><br />
+  Original Price : <%= f.number_field :original_price %><br />
+  Price: <%= f.number_field :original_price %><br />
+  <%= f.submit %>
+<% end %>

@@ -1,5 +1,6 @@
 class Show < ActiveRecord::Base
   belongs_to :theatre
+  belongs_to :commercial_users
   has_many :performances
 
   def self.get_storefront_info

@@ -28,7 +28,7 @@
 				<ul class="right">
 					<li><a href="#">Right Button Active</a></li>
 					<li class="has-dropdown">
-						<a href="#"><i class="fa fa-user"></i><%= current_user ? current_user.email : "Guest" %></a>
+						<a href="#"><i class="fa fa-user"></i><%= commercial_signed_in? ? current_commercial_user.email : "Guest" %></a>
 						<ul class="dropdown">
 							<% if current_user %>
 							<li><%= link_to(destroy_user_session_path, :method => :delete) do %><i class="fa fa-sign-out"></i>Logout<% end %></li>
