@@ -89,8 +89,8 @@ Rails.application.configure do
     :address => 'smtp.gmail.com', 
     :port => 587,
     :authentication => :plain,
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
+    :user_name => ENV['GMAIL_USERNAME'],
+    :password => ENV['GMAIL_PASSWORD'],
     :domain => 'desolate-earth-2268.herokuapp.com',
     :enable_starttls_auto => true }
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
