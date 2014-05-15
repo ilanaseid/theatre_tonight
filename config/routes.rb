@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	root 'storefront#index'
 	get '/storefront' => 'storefront#index'
 	get '/storefront/:id' => 'storefront#show'
+  get '/clear_cart' => 'shopping_carts#clear_cart'
 
   get '/commercial' => 'commercial_users#show'
   get '/commercial/sign_in' => 'commercial_sessions#sign_in'
