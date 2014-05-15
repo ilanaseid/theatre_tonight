@@ -1,5 +1,6 @@
 class ShoppingCartsController < ApplicationController
   before_filter :extract_shopping_cart
+  before_filter :authenticate_user!
 
   def create
     @ticket = Ticket.find(params[:ticket_id].to_i)
