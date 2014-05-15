@@ -10,7 +10,7 @@ var ShowDetailView = Backbone.View.extend({
 				$('#trigger-clear').click();
 			}
 		});
-		
+		console.log('Checking to change ticket status');
 		$('td.add-to-cart').each(function(){
 			if ($(this).text() == "Pending") {
 				$(this).text("Pending");

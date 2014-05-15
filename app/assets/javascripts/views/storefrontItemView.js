@@ -25,7 +25,7 @@ var StorefrontItemView = Backbone.View.extend({
 		$('#modal').foundation('reveal', 'open');
 		setModal = setInterval(function() {
 			this.populateModal(this.model.id);
-		}.bind(this), 10000);
+		}.bind(this), 4512);
 	}
 
 });

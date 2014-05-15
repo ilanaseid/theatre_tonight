@@ -5,12 +5,12 @@ var StorefrontCollectionView = Backbone.View.extend({
 	initialize: function() {
 		setInterval(function() {
 			console.log('Shopping cart was last updated at: ' + cartTime);
-			if((1).minutes().ago() > Date.parse(cartTime) && cartTime !== 0) {
+			if((10).minutes().ago() > Date.parse(cartTime) && cartTime !== 0) {
 				this.clearCart();
 			} else {
 				console.log('Time still remaining');
 			}
-		}.bind(this), 5000);
+		}.bind(this), 10000);
 	},
 	addAll: function() {
 		this.$el.empty();
@@ -27,9 +27,9 @@ var StorefrontCollectionView = Backbone.View.extend({
 			url: '/clear_cart',
 			method: 'get',
 			dataType: 'json',
-			data: {cart_id: cartId, status: 'expired'}
+			data: {cart_id: cartId}
 		}).done(function(data) {
-
+			cartTime = data.cart_last_updated;
 		});
 	}
 

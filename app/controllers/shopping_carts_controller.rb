@@ -27,12 +27,12 @@ class ShoppingCartsController < ApplicationController
   def clear_cart
     shopping_cart = ShoppingCart.find(params[:cart_id])
     shopping_cart.shopping_cart_items.each do |item|
-      Ticket.find(item.id).update(availability: "Available")
+      Ticket.find(item.item_id).update(availability: "Available")
     end
     shopping_cart.clear
     session[:cart_last_updated] = Time.now.to_s
     respond_to do |format|
-      format.json { render json: {}.to_json }
+      format.json { render json: {cart_last_updated: session[:cart_last_updated]}.to_json }
     end
   end
 
