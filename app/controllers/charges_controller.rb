@@ -26,7 +26,7 @@ cart_ticket_ids = []
 tickets = []
 @shopping_cart.shopping_cart_items.each do |item| cart_ticket_ids << item.item_id end
 cart_ticket_ids.each do |ticket_id| tickets << Ticket.find(ticket_id) end
-tickets.map do |ticket| ticket.update(availability: 'SOLD') end
+tickets.map do |ticket| ticket.update(availability: 'Sold') end
 
 @shopping_cart.clear
 
