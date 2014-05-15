@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
   	
-  	default from: "no-reply@theatretonight.com"
+  	default from: "app25170837@heroku.com"
 
 	def receipt_email(user)
 		@user = user
