@@ -4,8 +4,12 @@ var StorefrontCollectionView = Backbone.View.extend({
 	className: 'shows-wrapper small-block-grid-1 medium-block-grid-2',
 	initialize: function() {
 		setInterval(function() {
-			console.log('should i clear the cart?' + cartTime);
-			if((10).minutes().ago() > Date.parse(cartTime)) { this.clearCart(); }
+			console.log('Shopping cart was last updated at: ' + cartTime);
+			if((1).minutes().ago() > Date.parse(cartTime) && cartTime !== 0) {
+				this.clearCart();
+			} else {
+				console.log('Time still remaining');
+			}
 		}.bind(this), 5000);
 	},
 	addAll: function() {
@@ -17,13 +21,15 @@ var StorefrontCollectionView = Backbone.View.extend({
 		storefrontItemView.$el.appendTo(this.$el);
 	},
 	clearCart: function() {
-		console.log('clearing the carrrttttt poooooooooop');
 		var cartId = $('.shopping-cart-info').attr('id');
+		console.log('Clearing Shopping Cart with ID: ' + cartId);
 		$.ajax({
 			url: '/clear_cart',
 			method: 'get',
 			dataType: 'json',
 			data: {cart_id: cartId, status: 'expired'}
+		}).done(function(data) {
+
 		});
 	}
 
