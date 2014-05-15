@@ -11,9 +11,10 @@ var ShowDetailView = Backbone.View.extend({
 				$('#trigger-clear').click();
 			}
 		});
-		console.log('Checking to change ticket status');
+		
+		$('.reveal-modal-bg').click(this.clearTheInterval);
+
 		$('td.add-to-cart').each(function() {
-			console.log(_.contains(modelInfo.cart_items, Number($(this).attr('id'))));
 			if ($(this).text() == "Pending" && _.contains(modelInfo.cart_items, Number($(this).attr('id')))) {
 				$(this).text("Added to Cart");
 				$(this).removeClass('add-to-cart').addClass('pending');
@@ -41,7 +42,7 @@ var ShowDetailView = Backbone.View.extend({
 			dataType: 'json',
 			data: {ticket_id: e.currentTarget.id}
 		}).done(function(data) {
-			console.log($('#shopping-cart').text());
+
 			$('#shopping-cart').text('Cart (' + data.item_count + ')');
 		});
 	},

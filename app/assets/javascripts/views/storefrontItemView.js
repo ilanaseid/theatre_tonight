@@ -16,6 +16,7 @@ var StorefrontItemView = Backbone.View.extend({
 	populateModal: function(id) {
 		var modalModel = new ModalModel({id: id}).fetch({
 			success: function() {
+				console.log("Pls stop set int");
 				var showDetailView = new ShowDetailView({model: modalModel.responseJSON});
 			}.bind(this)
 		});
