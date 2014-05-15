@@ -8,7 +8,7 @@ class ShoppingCartsController < ApplicationController
     session[:cart_last_updated] = Time.now.to_s
     respond_to do |format|
       format.html { redirect_to shopping_cart_path }
-      format.json { render json: @ticket.to_json }
+      format.json { render json: {item_count: @shopping_cart.total_unique_items}.to_json }
     end
   end
 

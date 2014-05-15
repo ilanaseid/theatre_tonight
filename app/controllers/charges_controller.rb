@@ -30,8 +30,6 @@ tickets.map do |ticket| ticket.update(availability: 'SOLD') end
 
 @shopping_cart.clear
 
-session[:shopping_cart_id] = nil
-
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to charges_path

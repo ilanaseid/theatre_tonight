@@ -31,6 +31,7 @@ class Show < ActiveRecord::Base
       theatre: show.theatre.name,
       cart_id: shopping_cart_id,
       cart_updated_at: last_updated,
+      cart_items: ShoppingCart.find(shopping_cart_id).shopping_cart_items.map { |item| item.item_id },
       performances: show.performances.inject(Array.new) { |arr, performance| arr << {date: performance.date, start_time: performance.start_time.to_s(:long), tickets: performance.tickets} }
     }
   end

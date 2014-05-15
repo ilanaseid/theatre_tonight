@@ -30,6 +30,7 @@ var StorefrontCollectionView = Backbone.View.extend({
 			data: {cart_id: cartId}
 		}).done(function(data) {
 			cartTime = data.cart_last_updated;
+			$('#shopping-cart').text('Cart (' + 0 + ')');
 		});
 	}
 

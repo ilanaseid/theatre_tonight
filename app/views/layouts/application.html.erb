@@ -28,7 +28,7 @@
 
 				<ul class="right">
 				
-					<li><a href="/shopping_carts/<%= session[:shopping_cart_id]%>"><i class="fa fa-shopping-cart"></i>Cart (<%= ShoppingCart.find(session[:shopping_cart_id]).total_unique_items %>)</a><li>
+					<li><a href="/shopping_carts/<%= session[:shopping_cart_id]%>"><i class="fa fa-shopping-cart"></i><span id="shopping-cart">Cart (<%= ShoppingCart.find(session[:shopping_cart_id]).total_unique_items %>)</span></a><li>
 					
 					<li><a href="#">Right Button Active</a></li>
 					<li class="has-dropdown">
