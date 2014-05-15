@@ -3,12 +3,12 @@ class ShoppingCartsController < ApplicationController
 
   def create
     @ticket = Ticket.find(params[:ticket_id].to_i)
-    data = {ticket: @ticket, performance: @ticket.performance, show: @ticket.performance.show}
     @shopping_cart.add(@ticket, @ticket.price)
     @ticket.update(availability: "Pending")
+    session[:cart_last_updated] = Time.now.to_s
       respond_to do |format|
         format.html { redirect_to shopping_cart_path }
-        format.json { render json: @shopping_cart.to_json }
+        format.json { render json: @ticket.to_json }
       end
     end
 
@@ -16,10 +16,22 @@ class ShoppingCartsController < ApplicationController
 
   end
 
-  private
-  def extract_shopping_cart
-    shopping_cart_id = session[:shopping_cart_id]
-    @shopping_cart = session[:shopping_cart_id] ? ShoppingCart.find(shopping_cart_id) : ShoppingCart.create
-    session[:shopping_cart_id] = @shopping_cart.id
+  def destroy
+    @shopping_cart = ShoppingCart.find(params[:id])
+    
+    @ticket_to_remove = Ticket.find(params[:ticket_id]) 
+    @shopping_cart.remove(@ticket_to_remove, 1)
+    @ticket_to_remove.update(availability: "Available")
+    session[:cart_last_updated] = Time.now.to_s
+    redirect_to shopping_cart_path(@shopping_cart)
   end
+
+  def clear_cart
+    shopping_cart = ShoppingCart.find(params[:cart_id])
+    shopping_cart.shopping_cart_items.each do |item|
+      ticket = Ticket.find(item.id).update(availability: "Available")
+    end
+    shopping_cart.clear
+  end
+
 end

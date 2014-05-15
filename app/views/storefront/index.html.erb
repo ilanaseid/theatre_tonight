@@ -1,4 +1,4 @@
-<div class="row top-padding">
+<div class="row top-padding storefront_index">
 	<div class="small-12 columns" id="shows"></div>
 </div>
 
@@ -34,7 +34,7 @@
 				<td class="orig-price">$ <%%= v.original_price / 100 %>.00</td>
 				<td>Sale Price:</td>
 				<td class="sale-price">$ <%%= v.price / 100 %>.00</td>
-				<td class="add-to-cart" id="<%%= v.id %>"><i class="fa fa-shopping-cart"></i>Add to cart</td>
+				<td class="add-to-cart" id="<%%= v.id %>"><i class="fa fa-shopping-cart"></i><%%= v.availability %></td>
 			</tr>
 		<%% }); %>
 		</table>
@@ -44,3 +44,4 @@
 </script>
 
 <div id="modal" class="reveal-modal" data-reveal></div>
+<div class="shopping-cart_info" id="<%= session[:shopping_cart_id] %>"></div>

@@ -21,6 +21,17 @@ def create
     :currency    => 'usd'
   )
 
+# Upon successful charge should assign those items as sold and clear shopping cart
+cart_ticket_ids = []
+tickets = []
+@shopping_cart.shopping_cart_items.each do |item| cart_ticket_ids << item.item_id end
+cart_ticket_ids.each do |ticket_id| tickets << Ticket.find(ticket_id) end
+tickets.map do |ticket| ticket.update(availability: 'SOLD') end
+
+@shopping_cart.clear
+
+session[:shopping_cart_id] = nil
+
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to charges_path

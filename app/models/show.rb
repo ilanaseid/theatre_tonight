@@ -2,19 +2,21 @@ class Show < ActiveRecord::Base
   belongs_to :theatre
   has_many :performances
 
-  def self.get_storefront_info
+  def self.get_storefront_info(cart_id)
   	Show.all.map do |show|
   		{
         id: show.id,
         name: show.name,
         poster_url: show.poster_url,
         theatre: show.theatre.name,
+        shopping_cart_id: cart_id,
         lowest_price: show.performances.inject(Array.new) { |arr, obj| arr << obj.tickets.map { |ticket| ticket.price / 100 } }.flatten.min
       }
     end
+    
   end
 
-  def self.get_show_details(id)
+  def self.get_show_details(id, shopping_cart_id, last_updated)
     show = Show.find(id)
     return {
       name: show.name,
@@ -27,6 +29,8 @@ class Show < ActiveRecord::Base
       description: show.description,
       poster_url: show.poster_url,
       theatre: show.theatre.name,
+      cart_id: shopping_cart_id,
+      cart_updated_at: last_updated,
       performances: show.performances.inject(Array.new) { |arr, performance| arr << {date: performance.date, start_time: performance.start_time.to_s(:long), tickets: performance.tickets} }
     }
   end
