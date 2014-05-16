@@ -3,6 +3,7 @@ class UserMailer < ActionMailer::Base
   default from: "theatretonight.mailer@gmail.com"
 
 	def receipt_email(user)
+		Rails.logger.error("sending mail")
 		@user = user
 		@url = 'http://desolate-earth-2268.herokuapp.com/'
 		mail(to: @user.email, subject: "Thank you for your TheatreTonight purchase!")
