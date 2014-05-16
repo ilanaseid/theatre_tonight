@@ -11,6 +11,10 @@ h3 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 	margin-top: -5px;
 }
 
+.navbar {
+	text-transform: uppercase;
+}
+
 .top-padding {
 	padding-top: 30px;
 }
@@ -28,15 +32,29 @@ h3 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 			padding: 5px 10px 5px 10px;
 			background-color: rgba(255, 255, 255, 0.9);
 			img { height: 100px; }
-			h3 {
-				font-size: 20px;
-				line-height: 20px;
-				margin: 3px 0 0 0;
-				text-transform: uppercase;
+			.content-header {
+				height: 25px;
+				overflow: hidden;
 				border-bottom: solid 1px gray;
-				margin-bottom: 10px;
+				h3 {
+					font-size: 20px;
+					line-height: 25px;
+					text-transform: uppercase;
+					margin-bottom: 10px;
+				}
 			}
-			p { margin: 0; font-size: 14px; line-height: 16px; }
+			.content-body {
+				height: 80px;
+				margin: 5px 0 5px 0;
+				overflow: hidden;
+				p { margin: 0; font-size: 14px; line-height: 16px; }
+			}
+			.content-footer {
+				border-top: solid 1px gray;
+				height: 25px;
+				overflow: hidden;
+				p { font-family: 'bebasneue'; font-size: 18px; text-align: right; margin: 0; line-height: 25px; color: #cc2123; }
+			}
 		}
 	}
 }

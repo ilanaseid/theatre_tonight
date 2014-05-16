@@ -5,9 +5,15 @@
 <script type="text/template" id="storefront-item-template">
 	<div class="show-box shadow" style="background-image: url('<%%= poster_url %>'); background-size: cover;">
 		<div class="content">
-			<h3><%%= name %></h3>
-			<p><%%= theatre %></p>
-			<p>From $<%%= lowest_price %> ~</p>
+			<div class="content-header">
+				<h3><%%= name %></h3>
+			</div>
+			<div class="content-body">
+				<p><%%= theatre %></p>
+			</div>
+			<div class="content-footer">
+				<p>From $<%%= lowest_price %> ~</p>
+			</div>
 		</div>
 	</div>
 </script>
@@ -22,23 +28,23 @@
 	</ul>
 
 	<h3><%%= name %> <small>( <%%= theatre %> )</small></h3>
-	
+
 	<%% _.each(performances, function(value) { %>
 		<table class="ticket-table">
-		<tr><td colspan="6"><%%= value.start_time %></td></tr>
-		<%% _.each(value.tickets, function(v) { %>
-			<tr>
-				<td><%%= v.id %></td>
-				<td>Seat: <%%= v.seat_num + v.seat_row %></td>
-				<td>Original Price:</td>
-				<td class="orig-price">$ <%%= v.original_price / 100 %>.00</td>
-				<td>Sale Price:</td>
-				<td class="sale-price">$ <%%= v.price / 100 %>.00</td>
-				<td class="add-to-cart" id="<%%= v.id %>"><i class="fa fa-shopping-cart"></i><%%= v.availability %></td>
-			</tr>
-		<%% }); %>
+			<tr><td colspan="6"><%%= value.start_time %></td></tr>
+			<%% _.each(value.tickets, function(v) { %>
+				<tr>
+					<td><%%= v.id %></td>
+					<td>Seat: <%%= v.seat_num + v.seat_row %></td>
+					<td>Original Price:</td>
+					<td class="orig-price">$ <%%= v.original_price / 100 %>.00</td>
+					<td>Sale Price:</td>
+					<td class="sale-price">$ <%%= v.price / 100 %>.00</td>
+					<td class="add-to-cart" id="<%%= v.id %>"><i class="fa fa-shopping-cart"></i><%%= v.availability %></td>
+				</tr>
+				<%% }); %>
 		</table>
-	<%% }); %>
+		<%% }); %>
 	
 	<a id="trigger-clear" class="close-reveal-modal">&#215;</a>
 </script>
