@@ -2,6 +2,13 @@
 @font-face { font-family: gafata; src: url('<%= asset_path('gafata.otf') %>'); }
 @font-face { font-family: bebasneue; src: url('<%= asset_path('bebasneue.otf') %>'); }
 
+body {
+	background-image: url('<%= asset_path('bg.png') %>');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 400px 400px;
+	background-position: bottom left;
+}
 i { margin-right: 5px; }
 h3 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 .shadow { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
