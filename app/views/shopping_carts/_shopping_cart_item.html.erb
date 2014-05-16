@@ -5,8 +5,7 @@
 	<td><%= Ticket.find(shopping_cart_item.item.id).performance.start_time.to_formatted_s(:time) %> </td>
 	<td><%= Ticket.find(shopping_cart_item.item.id).seat_type + " " + Ticket.find(shopping_cart_item.item.id).seat_num + Ticket.find(shopping_cart_item.item.id).seat_row %>  </td>
 	<td>$<%= shopping_cart_item.item.price/100 %> </td> 
-	<td> <%= button_to "Remove from cart", {:controller => :shopping_carts,
-		:action => 'destroy', :ticket_id => shopping_cart_item.item.id}, :method => :delete, :class => 'button tiny' %>
-	</td>
+	<td class="remove-button"><%= button_to "Remove from cart", {:controller => :shopping_carts,
+		:action => 'destroy', :ticket_id => shopping_cart_item.item.id}, :method => :delete, :class => 'button tiny' %></td>
 </tr>
 
