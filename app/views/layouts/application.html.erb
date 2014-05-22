@@ -7,7 +7,8 @@
 	<title><%= content_for?(:title) ? yield(:title) : "TheatreTonight" %></title>
 
 	<%= stylesheet_link_tag    "application" %>
-	<link href='http://fonts.googleapis.com/css?family=Exo:300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<%= javascript_include_tag "vendor/modernizr" %>
 	<%= csrf_meta_tags %>
@@ -28,10 +29,10 @@
 
 				<ul class="right">			
 					<li><a href="/shopping_carts/<%= session[:shopping_cart_id]%>"><i class="fa fa-shopping-cart"></i><span id="shopping-cart">Cart (<%= ShoppingCart.find(session[:shopping_cart_id]).total_unique_items %>)</span></a><li>
-					<li><a href="#">About This Site</a></li>	
 					<li class="has-dropdown">
 						<a href="#"><i class="fa fa-user"></i><%= current_user ? current_user.email : "Guest" %></a>
 						<ul class="dropdown">
+							<li><a href="#"><i class="fa fa-info-circle"></i>About This Site</a></li>
 							<% if current_user %>
 							<li><%= link_to(destroy_user_session_path, :method => :delete) do %><i class="fa fa-sign-out"></i>Logout<% end %></li>
 							<% else %>

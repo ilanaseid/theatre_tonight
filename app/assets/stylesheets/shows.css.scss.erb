@@ -29,6 +29,7 @@ h3 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 .storefront-item {
 	.show-box {
 		border: solid 1px #333;
+		border-radius: 3px;
 		cursor: pointer;
 		height: 160px;
 		overflow: hidden;
@@ -39,21 +40,21 @@ h3 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 			height: 160px;
 			width: 180px;
 			padding: 5px 10px 5px 10px;
-			background-color: rgba(255, 255, 255, 0.95);
+			background-color: rgba(255, 255, 255, 1);
 			img { height: 100px; }
 			.content-header {
-				height: 25px;
+				height: 35px;
 				overflow: hidden;
 				border-bottom: solid 1px gray;
 				h3 {
-					font-size: 20px;
-					line-height: 25px;
+					font-size: 16px;
+					line-height: 35px;
 					text-transform: uppercase;
 					margin-bottom: 10px;
 				}
 			}
 			.content-body {
-				height: 80px;
+				height: 75px;
 				margin: 5px 0 5px 0;
 				overflow: hidden;
 				p { margin: 0; font-size: 14px; line-height: 16px; }
@@ -62,7 +63,17 @@ h3 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 				border-top: solid 1px gray;
 				height: 25px;
 				overflow: hidden;
-				p { font-family: 'bebasneue'; font-size: 18px; text-align: right; margin: 0; line-height: 25px; color: #cc2123; }
+				p {
+					font-family: 'bebasneue';
+					font-size: 20px;
+					font-weight: bold;
+					text-transform: uppercase;
+					text-align: right;
+					margin: 5px 0 0 0;
+					line-height: 25px;
+					color: #cc2123;
+					.price-head { font-size: 14px; font-weight: normal; margin-right: 5px; }
+				}
 			}
 		}
 	}
