@@ -35,7 +35,6 @@
 			<tr><td colspan="6"><%%= value.start_time %></td></tr>
 			<%% _.each(value.tickets, function(v) { %>
 				<tr>
-					<td><%%= v.id %></td>
 					<td>Seat: <%%= v.seat_num + v.seat_row %></td>
 					<td class="price-label">Original Price:</td>
 					<td class="orig-price">$ <%%= v.original_price / 100 %>.00</td>

@@ -32,12 +32,12 @@
 					<li class="has-dropdown">
 						<a href="#"><i class="fa fa-user"></i><%= current_user ? current_user.email : "Guest" %></a>
 						<ul class="dropdown">
-							<li><a href="#"><i class="fa fa-info-circle"></i>About This Site</a></li>
 							<% if current_user %>
 							<li><%= link_to(destroy_user_session_path, :method => :delete) do %><i class="fa fa-sign-out"></i>Logout<% end %></li>
 							<% else %>
-							<li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+							<li><%= link_to(user_session_path) do %><i class="fa fa-sign-in"></i>Sign in<% end %></li>
 							<% end %>
+							<li><a href="#"><i class="fa fa-info-circle"></i>About This Site</a></li>
 						</ul>
 					</li>
 				</ul>
