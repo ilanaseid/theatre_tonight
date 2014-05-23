@@ -1,30 +1,39 @@
 <div class="row top-padding">
-	<div class="small-12 columns" id="cart"></div>
+	<div class="small-12 columns" id="cart">
+		<div class="devise-wrap shadow">
+			<h3>Shopping Cart</h3>
+			<hr>
+			<table class="cart-table">
+			<tr>
+				<th>ID</th>
+				<th>Show</th>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Seat</th>
+				<th>Price</th>
+				<th></th>
+			</tr>
+			<%= render :partial => 'shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
+			</table>
+			<%= form_tag charges_path do %>
 
-<h1>Shopping Cart</h1>
+			<article>
+				<label class="amount"></label>
+					<table>
+						<tr><td>Subtotal</td><td><%= number_to_currency @shopping_cart.subtotal / 100%></td></tr>
+						<tr><td>Sales Tax</td><td><%= number_to_currency @shopping_cart.taxes / 100 %></td></tr>
+						<tr><td>Total</td><td><%= number_to_currency @shopping_cart.total / 100 %></td></tr>
+					</table>
+			</article>
 
-<%= form_tag charges_path do %>
-<article>
-	<label class="amount">
-		<div>
-			<div><b>SubTotal:</b><%= number_to_currency @shopping_cart.subtotal / 100%></div>
-			<div><b>Taxes:</b><%= number_to_currency @shopping_cart.taxes / 100 %></div>
-			<div><b>Total:</b><%= number_to_currency @shopping_cart.total / 100 %></div>
-		</div>
-	</label>
-</article>
+			<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+			data-email="<%= current_user.email %>"	  
+			data-description="Cart"
+			data-amount="<%= @shopping_cart.total %>">
+		</script>
 
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-	data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-	data-email="<%= current_user.email %>"	  
-	data-description="Cart"
-	data-amount="<%= @shopping_cart.total %>">
-</script>
-
-<% end %>
-<table class="cart-table">
-
-	<td>ID </td> <td> Show </td> <td> Date </td> <td> Time </td> <td> Seat </td> <td> Price </td> <td> </td>
-<%= render :partial => 'shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
-</table>
+		<% end %>
+	</div>
+</div>
 </div>
