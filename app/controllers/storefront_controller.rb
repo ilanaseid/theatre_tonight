@@ -17,4 +17,7 @@ class StorefrontController < ApplicationController
   	end
   end
 
+  def app_guide
+  end
+
 end

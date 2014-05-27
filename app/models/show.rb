@@ -1,4 +1,5 @@
 class Show < ActiveRecord::Base
+
   belongs_to :theatre
   belongs_to :commercial_users
   has_many :performances
@@ -33,7 +34,7 @@ class Show < ActiveRecord::Base
       cart_id: shopping_cart_id,
       cart_updated_at: last_updated,
       cart_items: ShoppingCart.find(shopping_cart_id).shopping_cart_items.map { |item| item.item_id },
-      performances: show.performances.inject(Array.new) { |arr, performance| arr << {date: performance.date, start_time: performance.start_time.to_s(:long), tickets: performance.tickets.order(availability: :asc).order(price: :asc)} }
+      performances: show.performances.inject(Array.new) { |arr, performance| arr << {date: performance.date, start_time: performance.start_time.to_s(:long), tickets: performance.tickets.order(price: :asc)} }
     }
   end
   

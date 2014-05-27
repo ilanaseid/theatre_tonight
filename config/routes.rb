@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
 	root 'storefront#index'
+  get '/app_guide' => 'storefront#app_guide'
 	get '/storefront' => 'storefront#index'
 	get '/storefront/:id' => 'storefront#show'
   get '/clear_cart' => 'shopping_carts#clear_cart'
