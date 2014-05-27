@@ -13,19 +13,9 @@ body {
 i { margin-right: 5px; }
 h1, h2, h3, h4 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 .shadow { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
-
-.logo {
-	height: 40px;
-	/*margin-top: -5px;*/
-}
-
-.navbar {
-	text-transform: uppercase;
-}
-
-.top-padding {
-	padding-top: 30px;
-}
+.logo { height: 40px; }
+.navbar { text-transform: uppercase; }
+.top-padding { padding-top: 30px; }
 
 .storefront-item {
 	.show-box {
@@ -39,7 +29,7 @@ h1, h2, h3, h4 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 			height: 160px;
 			width: 180px;
 			padding: 5px 10px 5px 10px;
-			background-color: rgba(255, 255, 255, 1);
+			background-color: rgba(255, 255, 255, 0.95);
 			img { height: 100px; }
 			.content-header {
 				height: 35px;
@@ -69,7 +59,7 @@ h1, h2, h3, h4 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 					text-align: right;
 					margin: 5px 0 0 0;
 					line-height: 25px;
-					color: #cc2123;
+					color: #CA242A;
 					.price-head { font-size: 14px; font-weight: normal; margin-right: 5px; }
 				}
 			}
@@ -84,28 +74,26 @@ h1, h2, h3, h4 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 .ticket-table {
 	width: 100%;
 	
-	.price-label { text-align: right; }
-	.orig-price {
+	.price {
 		text-align: right;
-		text-decoration: line-through;
-		font-family: 'bebasneue';
+		.price-label { font-size: 16px; color: #333; }
+		.orig-price {
+			text-align: right;
+			text-decoration: line-through;
+			font-size: 16px;
+			color: #333;
+			font-family: 'bebasneue';
+		}
+		i { font-size: 16px; color: #333; margin-left: 5px; }
+		.sale-price {
+			color: #CA242A;
+			font-family: 'bebasneue';
+			font-size: 20px;
+		}
 	}
-	.sale-price {
-		text-align: right;
-		color: red;
-		font-family: 'bebasneue';
-		font-size: 20px;
-	}
-	.availability {
-		text-align: center;
-	}
-	.add-to-cart {
-		color: red;
-		cursor: pointer;
-	}
-	.on-hold {
-		color: darkgray;
-	}
+	.availability { text-align: center; }
+	.add-to-cart { color: #CA242A; cursor: pointer; }
+	.on-hold { color: gray; }
 }
 
 .devise-wrap {
@@ -116,6 +104,6 @@ h1, h2, h3, h4 { margin: 0; padding: 0; font-family: 'bebasneue'; }
 .cart-table {
 	width: 100%;
 	.remove-button button {
-		
+		vertical-align: middle;
 	}
 }

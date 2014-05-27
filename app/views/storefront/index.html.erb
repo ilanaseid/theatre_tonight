@@ -12,7 +12,7 @@
 				<p><%%= theatre %></p>
 			</div>
 			<div class="content-footer">
-				<p><span class="price-head"><i class="fa fa-ticket"></i>From </span>$<%%= lowest_price %> ~</p>
+				<p><span class="price-head"><i class="fa fa-ticket"></i>From </span>$<%%= (lowest_price || 0) + '.00' %> ~</p>
 			</div>
 		</div>
 	</div>
@@ -34,14 +34,14 @@
 		<h3><i class="fa fa-clock-o"></i>Starting at <%%= value.start_time.substr(value.start_time.length - 5) %></h3>
 
 		<table class="ticket-table">
-			<tr><td colspan="6"><i class="fa fa-clock-o"></i><%%= value.start_time %></td></tr>
 			<%% _.each(value.tickets, function(v) { %>
 				<tr>
 					<td>Seat: <%%= v.seat_num + v.seat_row %></td>
-					<td class="price-label">Original Price:</td>
-					<td class="orig-price">$ <%%= v.original_price / 100 %>.00</td>
-					<td class="price-label">Sale Price:</td>
-					<td class="sale-price">$ <%%= v.price / 100 %>.00</td>
+					<td class="seat-type">Type: <%%= v.seat_type %></td>
+					<td class="price">
+						Sale Price: 
+						<span class="orig-price">$<%%= (v.original_price / 100) + '.00' %></span> / <span class="sale-price">$<%%= (v.price / 100) + '.00' %></span>
+					</td>
 					<td class="availability add-to-cart" id="<%%= v.id %>"><i class="fa fa-shopping-cart"></i><%%= v.availability %></td>
 				</tr>
 				<%% }); %>

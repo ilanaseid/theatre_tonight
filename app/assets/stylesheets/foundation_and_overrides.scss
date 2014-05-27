@@ -40,7 +40,7 @@ $row-width: rem-calc(1000);
 
 // We use these to control various global styles
 $body-bg: #f5f5f5;
-// $body-font-color: #222;
+$body-font-color: #333;
 $body-font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -54,7 +54,7 @@ $body-font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica,
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #CA242A;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -926,7 +926,7 @@ $reveal-close-side: rem-calc(11);
 // We use these to control the modal border
 // $reveal-border-style: solid;
 // $reveal-border-width: 1px;
-// $reveal-border-color: #666;
+$reveal-border-color: #333;
 
 // $reveal-modal-class: "reveal-modal";
 // $close-reveal-modal-class: "close-reveal-modal";
