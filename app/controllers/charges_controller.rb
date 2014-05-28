@@ -31,11 +31,13 @@ def create
   
   @shopping_cart.clear
  
+  begin
+    UserMailer.receipt_email(current_user).deliver
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to charges_path
-
-  UserMailer.receipt_email(current_user).deliver
+  end
+  
 end
 
 end
